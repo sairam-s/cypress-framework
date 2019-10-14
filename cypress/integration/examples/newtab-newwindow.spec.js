@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe("Sample test for testing new tab and new window", () => {
+describe("Sample test for handling new tab and new window", () => {
 
     it("test new tab", () => {
         cy.visit('https://www.w3schools.com/tags/att_a_target.asp');
