@@ -21,13 +21,12 @@ describe("Sample test for dropdown", () => {
         expect(cy.get('#dropdown-class-example').contains('Option3'));
     })
 
-    it.only("test dynamic dropdown iterate and select item", () => {
+    it("test dynamic dropdown iterate and select item", () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
     
         cy.get('.ui-autocomplete-input').type('Ind');
         cy.get('.ui-autocomplete').should('be.visible');
         cy.get('.ui-autocomplete').find('li.ui-menu-item').each(($item,index,$list) => {
-            cy.log($item.find('div').text())
             if($item.find('div').text().includes('India')){
                $item.click();
             }
@@ -35,5 +34,16 @@ describe("Sample test for dropdown", () => {
         cy.get('#autocomplete').should('have.value', 'India');
     })
 
-
+    it("test dynamic dropdown simple code", () => {
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
+    
+        cy.get('.ui-autocomplete-input').type('Ind');
+        cy.get('.ui-autocomplete').should('be.visible');
+        cy.get('.ui-menu-item div').each(($item,index,$list) => {
+            if($item.text()==='Indonesia'){
+               $item.click();
+            }
+        })
+        cy.get('#autocomplete').should('have.value', 'Indonesia');
+    })
 })
