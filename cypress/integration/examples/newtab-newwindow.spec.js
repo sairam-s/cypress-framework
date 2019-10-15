@@ -11,7 +11,7 @@ describe("Sample test for handling new tab and new window", () => {
     it.only("test new window", () => {
         cy.visit('https://qaclickacademy.com/practice.php');
 
-        //Replace button click onclick event to open a window byredirecting a url tp the existing window, rather than launching a new window
+        //Replace button click onclick event to open a window byredirecting a url to the existing window, rather than launching a new window
         cy.get('#openwindow').invoke('attr', 'onclick', 'window.open("https://qaclickacademy.com/","_self")').click();
     })
 })
