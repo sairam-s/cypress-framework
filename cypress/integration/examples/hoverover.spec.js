@@ -8,11 +8,10 @@ describe("Sample test for mouse hover", () => {
         cy.get('.mouse-hover-content').invoke('show').find('a').contains('Reload').click();
     })
 
-    it.only("test dispay casual dresses in the store", () => {
+    its("test dispay casual dresses in the store", () => {
         cy.visit('http://automationpractice.com/index.php');
         //Force the display of contents and click on the item
         cy.get('.sf-menu').find('li:visible').eq(1).invoke('show').find('a[title="Casual Dresses"]').click({ force: true });
-        cy.wait(2000)
         cy.get('.breadcrumb').find('span').should('have.length','3')
     })
 })
