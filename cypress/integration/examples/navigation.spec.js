@@ -2,7 +2,7 @@
 
 describe("Sample test for navigation", () => {
 
-    it("test ", () => {
+    it("test browser back navigation control", () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
         cy.get('a > .btn').click();
         cy.get("li").contains("Practice").click();
