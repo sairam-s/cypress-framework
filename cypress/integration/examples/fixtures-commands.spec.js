@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 describe('Test webpage form e2e', function () {
-    beforeEach(function () {
+    beforeEachs(function () {
         cy.fixture('formData').then(function (data) {
             this.formData = data;
             console.log('Data', this.formData)
@@ -26,7 +26,7 @@ describe('Test webpage form e2e', function () {
         this.formData.productName.forEach(item => {
             cy.selectProduct(item);
         });
-        
-        expect(cy.get('li.nav-item.active').find('a').should('contain.text','Checkout ( 2 )'));            
+
+        expect(cy.get('li.nav-item.active').find('a').should('contain.text', 'Checkout ( 2 )'));
     })
 })
