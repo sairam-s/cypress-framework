@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 describe('Test webpage form e2e', function () {
-    beforeEachs(function () {
+    beforeEach(function () {
         cy.fixture('formData').then(function (data) {
             this.formData = data;
             console.log('Data', this.formData)
