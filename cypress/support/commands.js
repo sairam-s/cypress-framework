@@ -23,11 +23,14 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import ShoppingPage from '../integration/pageObject/ShoppingPage';
+const shoppingPage = new ShoppingPage();
 
+console.log(shoppingPage.getAvailableItems);
 Cypress.Commands.add("selectProduct", (product) => {
-    cy.get('div.card').find('h4.card-title > a').each(function ($item, index, $list) {
+    shoppingPage.getItemName().each(function ($item, index, $list) {
         if ($item.text().includes(product)) {
-            cy.get('div.card-footer').eq(index).click();
+            shoppingPage.getAddToCartBtn().eq(index).click();
         }
     })
 })
